@@ -1,0 +1,3 @@
+#!/bin/bash
+coq_makefile *.ml4 *.ml *.mllib > Makefile
+make
