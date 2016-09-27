@@ -4,9 +4,9 @@ open Term
 (* library/nameops.ml: some operations about names. We only use pr_id. *)
 open Nameops
 
-Check a term whether is a arrow type. If it's an arrow type, like "P1 -> P2",
+(* Check a term whether is a arrow type. If it's an arrow type, like "P1 -> P2",
    we apply it. Prod means "dependent product", which you can consider as
-   "forall ...". In CiC, arrow type is just a particular case of dependent product.
+   "forall ...". In CiC, arrow type is just a particular case of dependent product. *)
 let is_prod constr =
   match kind_of_term constr with
   | Prod _ -> true
@@ -28,7 +28,6 @@ Be careful, Coq stores hypotheses in a reverse order. If your hypotheses like th
   H1: ...
 Coq will store them like this:
   [H1; H0; H]. *)
-
 let rec apply_chain h =
   let (id, _, _) = List.hd h in
   let tac = Tactics.apply (Term.mkVar id) in
