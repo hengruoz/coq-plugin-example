@@ -5,8 +5,8 @@ open Term
 open Nameops
 
 (* Check a term whether is a arrow type. If it's an arrow type, like "P1 -> P2",
-   we apply it. Prod means "dependent product", which you can consider as
-   "forall ...". In CiC, arrow type is just a particular case of dependent product. *)
+we apply it. Prod means "dependent product", which you can consider as "forall ...".
+In CiC, arrow type is just a particular case of dependent product. *)
 let is_prod constr =
   match kind_of_term constr with
   | Prod _ -> true
