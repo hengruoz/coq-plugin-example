@@ -15,7 +15,7 @@ let is_prod constr =
 (* Continue applying hypotheses.
 Tactics (tactics/tactics.ml) contains many primitive tactics, like "apply",
 "intros" and so on.
-Tacticals (tactics/tacticals.ml) can combinate the tactics to a new tactic
+Tacticals (tactics/tacticals.ml) can combinate the tactics into a new tactic
 (like MonadTransformer in Haskell). New is a module in Tacticals, I'll
 introduce it later. tclTHEN is a tactical, whose type is "tactic -> tactic -> tactic".
 When Coq evaluates "tclTHEN A B", Coq will apply tactic A and B in sequence.
